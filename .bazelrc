@@ -1,0 +1,17 @@
+build --verbose_failures=true
+build --action_env PYTHON_BIN_PATH="/usr/bin/python3"
+build --define PYTHON_BIN_PATH=/usr/bin/python3
+
+build --define=grpc_no_ares=true
+
+build -c opt
+
+# LLVM, MLIR and TF require C++14.
+build --cxxopt=-std=c++14
+build --host_cxxopt=-std=c++14
+
+# Bug with Bazel + GCC + UPB
+# Similar bug at: https://github.com/bazelbuild/bazel/issues/12056
+build --copt=-Wno-stringop-truncation
+
+build --experimental_repo_remote_exec
