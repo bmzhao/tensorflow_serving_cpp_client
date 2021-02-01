@@ -10,7 +10,9 @@
 # Tensorflow Serving
 * [SignatureDef contracts for Predict/Classify/Regress](https://www.tensorflow.org/tfx/serving/signature_defs#sample_structures)
 * [Classify Signaturedef Code](https://github.com/tensorflow/tensorflow/blob/86c79e9779a2d2653fddbb0e0391e2ea8121e81c/tensorflow/python/saved_model/signature_def_utils_impl.py#L119)
+* TF Serving Additional Classify Requirements: [Pre](https://github.com/tensorflow/serving/blob/b70a0d28f48550380c1996709abc36089d135f31/tensorflow_serving/servables/tensorflow/classifier.cc#L175) + [Post](https://github.com/tensorflow/serving/blob/b70a0d28f48550380c1996709abc36089d135f31/tensorflow_serving/servables/tensorflow/classifier.cc#L255)
 * [Regress Signaturedef Code](https://github.com/tensorflow/tensorflow/blob/86c79e9779a2d2653fddbb0e0391e2ea8121e81c/tensorflow/python/saved_model/signature_def_utils_impl.py#L71)
+* TF Serving Additional Regress Requirements: [Pre](https://github.com/tensorflow/serving/blob/b70a0d28f48550380c1996709abc36089d135f31/tensorflow_serving/servables/tensorflow/regressor.cc#L169) + [Post](https://github.com/tensorflow/serving/blob/b70a0d28f48550380c1996709abc36089d135f31/tensorflow_serving/servables/tensorflow/regressor.cc#L209)
 * [Predict Signaturedef Code](https://github.com/tensorflow/tensorflow/blob/86c79e9779a2d2653fddbb0e0391e2ea8121e81c/tensorflow/python/saved_model/signature_def_utils_impl.py#L178)
 * [Signaturedef String Constants](https://github.com/tensorflow/tensorflow/blob/86c79e9779a2d2653fddbb0e0391e2ea8121e81c/tensorflow/cc/saved_model/signature_constants.h#L19)
 * [Run ModelServer with Docker](https://www.tensorflow.org/tfx/serving/docker)

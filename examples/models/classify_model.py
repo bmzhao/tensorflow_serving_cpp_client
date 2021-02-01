@@ -6,8 +6,7 @@ class ClassifyModel(tf.Module):
     # SignatureDef expectations: https://github.com/tensorflow/tensorflow/blob/86c79e9779a2d2653fddbb0e0391e2ea8121e81c/tensorflow/cc/saved_model/signature_constants.h#L30
     def func(self, inputs):
         # https://www.tensorflow.org/api_docs/python/tf/io/parse_example#we_can_use_arguments
-        # Inputs is guaranteed to be rank 0, since our input signature uses tensorspec with shape [].
-        # We expect a single example with feature name 'picture' corresponding to a flattened 28 x 28 
+        # We expect a batch of examples with feature name 'picture' corresponding to a flattened 28 x 28 
         # float32 matrix.
         example = tf.io.parse_example(inputs, {
             'picture' : tf.io.FixedLenFeature((28*28,), tf.float32, default_value=tf.zeros(28*28,))
