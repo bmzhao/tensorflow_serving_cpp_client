@@ -19,3 +19,14 @@ cc_binary(
         "@org_tensorflow//tensorflow/core:lib",
     ],
 )
+
+cc_binary(
+    name = "regress_example",
+    srcs = ["regress_example.cc"],
+    deps = [
+        "//client:regress_client",
+        "@com_github_grpc_grpc//:grpc++",
+        "@org_tensorflow//tensorflow/core:framework",
+        "@org_tensorflow//tensorflow/core:lib",
+    ],
+)
