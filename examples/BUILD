@@ -15,8 +15,6 @@ cc_binary(
     deps = [
         "@httplib",
         "@json",
-        "@org_tensorflow//tensorflow/core:framework",
-        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -39,5 +37,14 @@ cc_binary(
         "@com_github_grpc_grpc//:grpc++",
         "@org_tensorflow//tensorflow/core:framework",
         "@org_tensorflow//tensorflow/core:lib",
+    ],
+)
+
+cc_binary(
+    name = "regress_http_example",
+    srcs = ["regress_http_example.cc"],
+    deps = [
+        "@httplib",
+        "@json",
     ],
 )
