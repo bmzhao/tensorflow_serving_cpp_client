@@ -12,6 +12,28 @@ http_archive(
 
 load("@org_tensorflow_serving//tensorflow_serving:repo.bzl", "tensorflow_http_archive")
 
+# JSON for Modern C++ Dependency for C++ HTTP Client
+http_archive(
+    name = "json",
+    build_file = "@//third_party:json.BUILD",
+    sha256 = "a88449d68aab8d027c5beefe911ba217f5ffcc0686ae1793d37f3d20698b37c6",
+    strip_prefix = "json-3.9.1",
+    urls = [
+        "https://github.com/nlohmann/json/archive/v3.9.1.zip",
+    ],
+)
+
+# HTTP Lib C++ HTTP Client
+http_archive(
+    name = "httplib",
+    build_file = "@//third_party:httplib.BUILD",
+    sha256 = "25fb16ce8eb26bb9c5001e4b665c898b72db612309a4b72c075406b50ae50d4b",
+    strip_prefix = "cpp-httplib-0.8.3",
+    urls = [
+        "https://github.com/yhirose/cpp-httplib/archive/v0.8.3.zip",
+    ],
+)
+
 tensorflow_http_archive(
     name = "org_tensorflow",
     git_commit = "85c8b2a817f95a3e979ecd1ed95bff1dc1335cff",

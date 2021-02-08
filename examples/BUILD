@@ -10,6 +10,17 @@ cc_binary(
 )
 
 cc_binary(
+    name = "classify_http_example",
+    srcs = ["classify_http_example.cc"],
+    deps = [
+        "@httplib",
+        "@json",
+        "@org_tensorflow//tensorflow/core:framework",
+        "@org_tensorflow//tensorflow/core:lib",
+    ],
+)
+
+cc_binary(
     name = "predict_example",
     srcs = ["predict_example.cc"],
     deps = [
