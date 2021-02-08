@@ -30,6 +30,15 @@ cc_binary(
 )
 
 cc_binary(
+    name = "predict_http_example",
+    srcs = ["predict_http_example.cc"],
+    deps = [
+        "@httplib",
+        "@json",
+    ],
+)
+
+cc_binary(
     name = "regress_example",
     srcs = ["regress_example.cc"],
     deps = [
